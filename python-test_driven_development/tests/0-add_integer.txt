@@ -1,0 +1,53 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is an 0-add text file in reStructuredText format. First, import
+``add_integer`` from the ``0-add_integer`` module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(4, 5.6)
+9
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add_integer(3.5, 2)
+5
+>>> add_integer("Hello", 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+Additional Tests
+----------------
+
+### Test present: Float overflow
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+### Test present: cannot convert float NaN to integer
+>>> add_integer(float('nan'), 1)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+### Test present: missing one argument
+>>> add_integer(5)
+103
+>>> add_integer(5, 3)
+8
+
+### Test present: missing two arguments
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'

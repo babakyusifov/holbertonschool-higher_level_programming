@@ -1,0 +1,40 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``adivided matrix_divided``
+-------------------
+
+This is an 0-add text file in reStructuredText format. First, import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> Test file for matrix_divided function
+
+Test 1: Basic division with integer matrix
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]] matrix_divided(matrix, 3) [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test 2: Division with float matrix
+
+>>> matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]] matrix_divided(matrix, 2) [[0.75, 1.25, 1.75], [2.25, 2.75, 3.25]]
+
+Test 3: TypeError for invalid matrix type
+
+>>> matrix = [[1, 2, "3"], [4, 5, 6]] matrix_divided(matrix, 2) Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 4: TypeError for rows of different sizes
+
+>>> matrix = [[1, 2, 3], [4, 5]] matrix_divided(matrix, 2) Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+Test 5: ZeroDivisionError for div = 0
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]] matrix_divided(matrix, 0) Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+Additional Tests
+----------------
