@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""
-This module provides a function to print text with two new lines
-after each '.', '?' or ':' character.
-"""
+"""text indent"""
+
 
 def text_indentation(text):
-    """Prints text with 2 new lines after each '.', '?', and ':'."""
+    """text indent"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    new_line = ""
-    for char in text:
-        new_line += char
-        if char in ".?:":
-            print(new_line.strip())
-            print()
-            new_line = ""
-    if new_line.strip():
-        print(new_line.strip())
 
+    for delimeter in "?:.":
+        words = (delimeter + "\n\n").join(
+                [index.strip(" ") for index in words.split(delimeter)])
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
