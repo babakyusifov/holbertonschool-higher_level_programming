@@ -1,0 +1,53 @@
+The ``1-my_list`` module
+=========================
+
+Using ``MyList``
+----------------
+
+This is a test file for the ``MyList`` class in reStructuredText format.
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList([5, 1, 4, 2, 3])
+>>> print(my_list)
+[5, 1, 4, 2, 3]
+
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> print(my_list)
+[5, 1, 4, 2, 3]
+
+Additional Tests
+----------------
+
+>>> empty_list = MyList()
+>>> print(empty_list)
+[]
+
+>>> empty_list.print_sorted()
+[]
+
+>>> negative_list = MyList([-1, -5, -3, 0])
+>>> negative_list.print_sorted()
+[-5, -3, -1, 0]
+
+>>> print(negative_list)
+[-1, -5, -3, 0]
+
+Test present: check append()
+----------------------------
+
+>>> my_list2 = MyList([10, 3, 7])
+>>> print(my_list2)
+[10, 3, 7]
+
+>>> my_list2.append(5)
+>>> print(my_list2)
+[10, 3, 7, 5]
+
+>>> my_list2.print_sorted()
+[3, 5, 7, 10]
+
+>>> print(my_list2)
+[10, 3, 7, 5]
