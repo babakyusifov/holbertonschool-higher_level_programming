@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""text indent"""
+'''
+This is the "5-text_indentation" module.
+The example module supplies one function, def text_indentation().
+'''
 
 
 def text_indentation(text):
-    """text indent"""
+    '''
+    function that prints a text with 2 new lines after these
+    characters: ., ? and :
+    '''
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    for char in ".:?":
+        text = text.replace(char, char + "\n\n")
 
-    for delimeter in "?:.":
-        words = (delimeter + "\n\n").join(
-                [index.strip(" ") for index in words.split(delimeter)])
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/5-text_indentation.txt")
+    print("\n".join(line.strip() for line in text.split("\n")), end="")
