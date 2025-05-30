@@ -1,24 +1,31 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
+============================================
+How to use 7-base_geometry.py
+============================================
 
->>> bg.integer_validator("my_int", 12)
+This library is very simple, since it only has one function called
+ ''integer_validator()''.
 
->>> bg.integer_validator("width", 89)
+Numbers:
+========
+''integer_validator()'' returns True if a num is integer.
+:: with positives integers
+   >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+   >>> bg = BaseGeometry()
 
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] name must be an integer
+:: with positive integer
+   >>> bg.integer_validator("my_int", 12)
 
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] age must be greater than 0
+:: with negative integer
+   >>> bg.integer_validator("number", -12)
+   Traceback (most recent call last):
+   ValueError: number must be greater than 0
 
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+:: with 3 arguments
+   >>> bg.integer_validator("numbers", 0, 1)
+   Traceback (most recent call last):
+   TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+:: with infinite integer
+   >>> bg.integer_validator("infnumber", int('inf'))
+   Traceback (most recent call last):
+   ValueError: invalid literal for int() with base 10: 'inf'
