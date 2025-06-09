@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def pascal_triangle(n):
     """Calculate Pascal's Triangle up to n rows."""
     triangle = []
