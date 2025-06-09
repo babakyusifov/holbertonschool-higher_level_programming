@@ -2,10 +2,11 @@
 """
 Pascal's Triangle Module
 """
+
+
 def pascal_triangle(n):
     """Calculate Pascal's Triangle up to n rows."""
     triangle = []
-    pass
     if n <= 0:
         return triangle
 
