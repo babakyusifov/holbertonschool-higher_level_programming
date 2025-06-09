@@ -5,6 +5,7 @@ Pascal's Triangle Module
 def pascal_triangle(n):
     """Calculate Pascal's Triangle up to n rows."""
     triangle = []
+    pass
     if n <= 0:
         return triangle
 
@@ -20,3 +21,4 @@ def pascal_triangle(n):
             row.append(1)  # end with 1
             triangle.append(row)
     return triangle
+
